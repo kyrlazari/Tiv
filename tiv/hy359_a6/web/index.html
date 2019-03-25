@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>My Network</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/mystyle.css"/>
+        <script type="text/javascript" src="js/exif.js"></script>
+        <script type="text/javascript" src="js/tiv.js"></script>
+        <script type="text/javascript" src="js/photoDB.js"></script>
+        <script type="text/javascript" src="js/myjs.js"></script>
+    </head>
+    <body>
+        <nav>
+            <div id="nav-left" class="nav-left">
+                <button id="LatestImages" onclick="guestUserImages();" class="button">Latest Images</button>
+                <select id="numberOfImages" style="display: block">
+                    <option value="">Number of Images</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="0">All Photos</option>
+                </select>
+            </div>
+            <div class="nav-right">
+                <button id="button2" onclick="login();" class="button">Login</button>
+                <button id="button3" onclick="register();" class="button">Register</button>
+            </div>
+        </nav>
+        
+        <div id="main" class="main">
+            <div id="ajaxContent"></div>
+            <script>checkSession();</script>
+        </div>
+        <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3P9_kOd5EybI5jiYIlPr_s3zfuzBBzGs">
+        </script>
+        <script>
+            var numberOfImages = document.getElementById('numberOfImages');
+            numberOfImages.onchange = function (){
+                userImageValue = this.value;
+                changedImageValue = true;
+            };
+        </script>
+    </body>
+</html>
